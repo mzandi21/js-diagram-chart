@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+       <meta charset="utf-8"/>
+       <title>Didio Chart Js - 1.0.0 - by Diógenes Silveira</title>
+       <script type="text/javascript" src="js/didioChart.js"></script>
+       <script type="text/javascript">
+
+       	var dataExample = {
+       		nodes: [
+       			{id: 1, text: ["Linha 01", "Linha 02", "Linha 03"], color: "#ffffff", bgColor: "#336699"},
+       			{id: 2, text: ["Linha 01", "Linha 02", "Linha 03"], color: "#ffffff", bgColor: "#336699"},
+       			{id: 3, text: ["Linha 01", "Linha 02", "Linha 03"], color: "#ffffff", bgColor: "#336699"},
+       			{id: 4, text: ["Linha 01", "Linha 02", "Linha 03"], color: "#ffffff", bgColor: "#336699"},
+       			{id: 5, text: ["Linha 01", "Linha 02", "Linha 03"], color: "#ffffff", bgColor: "#336699"},
+       		],
+       		edges: [
+       			{ source: 2, parent:1  },
+       			{ source: 3, parent:1  },
+       			{ source: 4, parent:3  },
+       			{ source: 5, parent:3  },
+   			]
+       	};
+
+
+       	var graphDidio = didioChart(dataExample ,{
+            margin: 49,
+            padding: 10,
+            width: 250,
+            height: 170,
+            arrowWidth: 10,
+            lineWidth: 2,
+            fontFamily: "Arial",
+            fontSize: 12,
+            linkColor: "#1a75ce",
+            disableColor: "#ccc",
+            fullScreen : false,
+        });
+
+       </script>
+   </head>
+   <body>
+       <canvas width="640" height="480">NotSupport</canvas>
+   </body>
+</html>
