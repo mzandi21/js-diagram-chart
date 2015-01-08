@@ -7,9 +7,10 @@
  * Released under the MIT license
  * https://github.com/antuane/
  */
-
+"use strict";
 
 var didioChart = function(data, config){
+    "use strict";
 
     //GLOBAL VARIABLES
     var CANVAS = document.getElementsByTagName('canvas')[0];
