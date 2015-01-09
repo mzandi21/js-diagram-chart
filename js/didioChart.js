@@ -9,9 +9,10 @@
  */
 
 
-
+'use strict';
 var didioChart = function(data, config){
 
+    'use strict';
     //GLOBAL VARIABLES
     var CANVAS = document.getElementsByTagName('canvas')[0];
     var CONTEXT = CANVAS.getContext("2d");
@@ -536,7 +537,6 @@ var didioChart = function(data, config){
     },false);
 
     var scaleFactor = 1.1;
-    zoomScale = 0;
     var zoom = function(clicks){
         ZOOM_SCALE += clicks;
         var pt = CONTEXT.transformedPoint(CANVAS.width / 2,CANVAS.height / 2);
@@ -547,8 +547,7 @@ var didioChart = function(data, config){
         draw();
     }
 
-
-    this.changeZoom = function(clicks){
+    var changeZoom = function(clicks){
         ZOOM_SCALE += clicks;
         var pt = CONTEXT.transformedPoint(CANVAS.width / 2,CANVAS.height / 2);
         CONTEXT.translate(pt.x,pt.y);
@@ -558,13 +557,19 @@ var didioChart = function(data, config){
         draw();
     }
 
-    this.resetZoom = function(){
+    //this.changeZoom = changeZoom;
+
+    var resetZoom = function(){
         this.changeZoom(-ZOOM_SCALE);
         CONTEXT.translate(-MOVE_X,-MOVE_Y);
         ZOOM_SCALE = 0;
         MOVE_X = 0;
         MOVE_Y = 0;
     }
+
+    //this.resetZoom = resetZoom;
+
+
 
     var handleScroll = function(evt){
         var delta = evt.wheelDelta ? evt.wheelDelta/300 : evt.detail ? -evt.detail : 0;
