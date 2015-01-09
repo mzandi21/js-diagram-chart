@@ -8,6 +8,8 @@
  * https://github.com/antuane/
  */
 
+
+'use strict';
 var didioChart = function(data, config){
 
     'use strict';
