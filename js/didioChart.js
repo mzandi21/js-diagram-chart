@@ -7,10 +7,10 @@
  * Released under the MIT license
  * https://github.com/antuane/
  */
-"use strict";
+
+
 
 var didioChart = function(data, config){
-    "use strict";
 
     //GLOBAL VARIABLES
     var CANVAS = document.getElementsByTagName('canvas')[0];
@@ -392,8 +392,7 @@ var didioChart = function(data, config){
                         arrow.fill();
 
                     }else if(invertParent){
-                        countInvertParent++;
-                        var difference = (DIAGRAM_MARGIN  - (ARROW_WIDTH + (LINE_WIDTH * 2)) * countInvertParent);
+                        var difference = ((DIAGRAM_MARGIN/2)-((DIAGRAM_MARGIN / LIST_MAX_COLUMNS) * LIST_OBJECTS[i].x)) + (DIAGRAM_MARGIN  - (ARROW_WIDTH + (LINE_WIDTH * 2 * countInvertParent)));
                         var line = CONTEXT;
                         CONTEXT.setLineDash([LINE_WIDTH * 2]);
                         console.log(LIST_OBJECTS[i]);
@@ -417,9 +416,8 @@ var didioChart = function(data, config){
 
                     }else if(isDistant){
 
+                        var difference = ((DIAGRAM_MARGIN/2)-((DIAGRAM_MARGIN / LIST_MAX_COLUMNS) * LIST_OBJECTS[i].x)) + (DIAGRAM_MARGIN  - (ARROW_WIDTH + (LINE_WIDTH * 2 * countDistant)));
                         countDistant++;
-                        var difference = (DIAGRAM_MARGIN  - (ARROW_WIDTH + (LINE_WIDTH * 2)) * countDistant);
-
 
                         if(!isFinite(difference)){
                             difference = 0;
@@ -633,6 +631,7 @@ var didioChart = function(data, config){
             return pt.matrixTransform(xform.inverse());
         }
     };
+
 
 
     trackTransforms(CONTEXT);
