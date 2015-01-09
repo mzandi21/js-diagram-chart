@@ -8,11 +8,8 @@
  * https://github.com/antuane/
  */
 
-
-'use strict';
 var didioChart = function(data, config){
 
-    'use strict';
     //GLOBAL VARIABLES
     var CANVAS = document.getElementsByTagName('canvas')[0];
     var CONTEXT = CANVAS.getContext("2d");
