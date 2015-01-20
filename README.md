@@ -26,7 +26,7 @@ PORTUGUES:
 
 É um simples  prototipo de gráfico de diagrama baseado na hierarquia , feito em javascript usando CANVAS / HTML5
 
-*Isto é apenas uma base para ser aprimorada conforme a suas necessidades!
+* Isto é apenas uma base para ser aprimorada conforme a suas necessidades!
 
 
 Exemplo de como usar:
