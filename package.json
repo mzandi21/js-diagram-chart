@@ -1,0 +1,25 @@
+{
+  "name": "antuane-chart",
+  "version": "1.0.0",
+  "description": "It is a simple prototype diagram chart based on hierarchy",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antuane/antuane-chart.git"
+  },
+  "keywords": [
+    "antuane",
+    "chart",
+    "diagram",
+    "javascript"
+  ],
+  "author": "Diógenes Silveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antuane/antuane-chart/issues"
+  },
+  "homepage": "https://github.com/antuane/antuane-chart#readme"
+}
