@@ -19,22 +19,24 @@
 
 </head>
 <body>
-  <canvas id="mycanvas" width="640" height="480" style="background:#333">NotSupport</canvas>
+  <canvas id="mycanvas" width="640" height="480" style="background:#f7f7f7">NotSupport</canvas>
   <script type="text/javascript">
 
   var dataExample = {
-    source: [
-      {id: 1, text: "Text Example", color: "#ffffff", bgColor: "#336699"},
-      {id: 2, text: "Text Example", color: "#ffffff", bgColor: "#336699"},
-      {id: 3, text: "Text Example", color: "#ffffff", bgColor: "#336699"},
-      {id: 4, text: "Text Example", color: "#ffffff", bgColor: "#336699"},
-      {id: 5, text: "Text Example", color: "#ffffff", bgColor: "#336699"}
+    diagrams: [
+      {id: 1, text: "Text Example", color: "#ffffff", bgColor: "#330000"},
+      {id: 2, text: "Text Example", color: "#ffffff", bgColor: "#003300"},
+      {id: 3, text: "Text Example", color: "#ffffff", bgColor: "#000033"},
+      {id: 4, text: "Text Example", color: "#ffffff", bgColor: "#333300"},
+      {id: 5, text: "Text Example", color: "#ffffff", bgColor: "#003333"},
+      {id: 6, text: "Text Example", color: "#ffffff", bgColor: "#330033"}
     ],
     links: [
       { source: 2, parent:1  },
       { source: 3, parent:1  },
       { source: 4, parent:3  },
       { source: 5, parent:3  },
+      { source: 6, parent:2  }
     ],
     config:{
       element: "mycanvas",
