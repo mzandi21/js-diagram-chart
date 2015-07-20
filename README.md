@@ -1,6 +1,7 @@
 # AntuaneChart
 
-  It is a simple prototype diagram chart based on hierarchy , made in javascript using CANVAS / HTML5
+  It is a simple diagram chart based on hierarchy
+  Javascript / Html5 / Canvas
 
 ## How to use
 
@@ -53,3 +54,7 @@
            var antuaneChart = new AntuaneChart(dataExample);
 
         ```
+
+## Live Example JSFiddle
+
+  http://jsfiddle.net/antuane/7qp15m3v/
