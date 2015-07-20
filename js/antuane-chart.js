@@ -430,10 +430,14 @@ AntuaneChart.prototype.draw = function(){
         var neighborRight = false;
         var neighborLeft = false;
         var isDistant = false;
+        var autoRef = false;
         var countDistant = 0;
         var countInvertParent = 0;
 
-        if(_diagrams[i].y == tmpObj.y){
+        if(_diagrams[i].id == tmpObj.id){
+          autoRef = true;
+        }
+        else if(_diagrams[i].y == tmpObj.y){
           if(_diagrams[i].x - tmpObj.x == -1){
             neighborRight = true;
           }else if(_diagrams[i].x - tmpObj.x == 1){
@@ -447,35 +451,66 @@ AntuaneChart.prototype.draw = function(){
           isDistant = true;
         }
 
+        if(autoRef){
+          var difference = ((_config.margin/2)-((_config.margin / _config.columnsCount) * _diagrams[i].x));
 
-        if(neighborRight){
+          if(!isFinite(difference)){
+            difference = 0;
+          }
+
+          var line = _context;
+          _context.setLineDash([0]);
+
+          line.beginPath();
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;
+          line.moveTo((tmpObj.left + (_config.width /2)) + (difference * -1) + difference, tmpObj.top + _config.height);
+          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1) + difference, tmpObj.top + _config.height + (_config.margin/2));
+          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1) - difference, tmpObj.top + _config.height + (_config.margin/2));
+          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1) - difference, tmpObj.top + _config.height + (_config.arrowWidth/2));
+          line.lineWidth = _config.lineWidth;
+          line.stroke();
+
+
+          var arrow = _context;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
+          arrow.beginPath();
+          arrow.moveTo((tmpObj.left + (_config.width /2)) + (difference * -1)- difference, tmpObj.top + _config.height);
+          arrow.lineTo((tmpObj.left + (_config.width /2)) - (_config.arrowWidth/2) + (difference * -1)- difference, tmpObj.top + _config.height + _config.arrowWidth);
+          arrow.lineTo((tmpObj.left + (_config.width /2)) + (_config.arrowWidth/2) + (difference * -1)- difference, tmpObj.top + _config.height + _config.arrowWidth);
+          arrow.fill();
+
+        }
+        else if(neighborRight){
           var line = _context;
           _context.setLineDash([0]);
           line.beginPath();
-          line.strokeStyle = _diagrams[i].bgColor;
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;
           line.moveTo(_diagrams[i].left + (_config.width /2), _diagrams[i].top + (_config.height / 2));
           line.lineTo(tmpObj.left - _config.arrowWidth , tmpObj.top + (_config.height / 2));
           line.lineWidth = _config.lineWidth;
           line.stroke();
+
           var arrow = _context;
-          arrow.fillStyle= _diagrams[i].bgColor;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
           arrow.beginPath();
           arrow.moveTo(tmpObj.left, tmpObj.top + (_config.height / 2));
           arrow.lineTo(tmpObj.left - _config.arrowWidth, tmpObj.top + (_config.height / 2) - (_config.arrowWidth / 2));
           arrow.lineTo(tmpObj.left - _config.arrowWidth, tmpObj.top + (_config.height / 2) + (_config.arrowWidth / 2));
           arrow.fill();
+
         }else if(neighborLeft){
+
           var line = _context;
           _context.setLineDash([0]);
           line.beginPath();
-          line.strokeStyle = _diagrams[i].bgColor;
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;
           line.moveTo(_diagrams[i].left + (_config.width /2), _diagrams[i].top + (_config.height / 2));
           line.lineTo(tmpObj.left + _config.width + _config.arrowWidth, tmpObj.top + (_config.height / 2));
           line.lineWidth = _config.lineWidth;
           line.stroke();
 
           var arrow = _context;
-          arrow.fillStyle= _diagrams[i].bgColor;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
           arrow.beginPath();
           arrow.moveTo(tmpObj.left + _config.width , tmpObj.top + (_config.height / 2));
           arrow.lineTo(tmpObj.left + _config.width + _config.arrowWidth, tmpObj.top + (_config.height / 2) - (_config.arrowWidth / 2));
@@ -493,7 +528,7 @@ AntuaneChart.prototype.draw = function(){
           var line = _context;
           _context.setLineDash([0]);
           line.beginPath();
-          line.strokeStyle = _diagrams[i].bgColor;;
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;;
           line.moveTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top);
           line.lineTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top - _config.margin + difference);
           line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top - _config.margin + difference);
@@ -503,7 +538,7 @@ AntuaneChart.prototype.draw = function(){
 
 
           var arrow = _context;
-          arrow.fillStyle= _diagrams[i].bgColor;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
           arrow.beginPath();
           arrow.moveTo((tmpObj.left + (_config.width /2)) - difference, tmpObj.top);
           arrow.lineTo((tmpObj.left + (_config.width /2)) - (_config.arrowWidth/2) - difference, tmpObj.top - _config.arrowWidth);
@@ -515,7 +550,7 @@ AntuaneChart.prototype.draw = function(){
           var line = _context;
           _context.setLineDash([_config.lineWidth * 2]);
           line.beginPath();
-          line.strokeStyle = _diagrams[i].bgColor;
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;
           line.moveTo((_diagrams[i].left + (_config.width /2)) + difference, _diagrams[i].top + (_config.height /2) + difference);
           line.lineTo(_diagrams[i].left + _config.width + _config.margin + difference, _diagrams[i].top + (_config.height /2) + difference);
           line.lineTo(_diagrams[i].left + _config.width + _config.margin + difference, tmpObj.top - _config.margin + difference);
@@ -525,7 +560,7 @@ AntuaneChart.prototype.draw = function(){
           line.stroke();
 
           var arrow = _context;
-          arrow.fillStyle= _diagrams[i].bgColor;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
           arrow.beginPath();
           arrow.moveTo((tmpObj.left + (_config.width /2)) + difference, tmpObj.top);
           arrow.lineTo((tmpObj.left + (_config.width /2)) - (_config.arrowWidth/2) + difference, tmpObj.top - _config.arrowWidth);
@@ -542,22 +577,22 @@ AntuaneChart.prototype.draw = function(){
           }
 
           var line = _context;
-          _context.setLineDash([_config.lineWidth * 4]);
+          _context.setLineDash([_config.lineWidth * 2]);
 
           line.beginPath();
-          line.strokeStyle = colorLuminance(_diagrams[i].bgColor, -0.2);
+          line.strokeStyle = _config.lineColor || _helper.colorLuminance(_diagrams[i].bgColor, -0.2);
 
           line.moveTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top);
           line.lineTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top - _config.margin + difference);
           line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), _diagrams[i].top - _config.margin + difference);
           line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height + _config.margin + difference);
-          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height);
-          line.lineWidth = _config.lineWidth * 2;
+          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height + (_config.arrowWidth/2));
+          line.lineWidth = _config.lineWidth;
           line.stroke();
 
 
           var arrow = _context;
-          arrow.fillStyle = colorLuminance(_diagrams[i].bgColor, -0.2);
+          arrow.fillStyle = _config.lineColor || _helper.colorLuminance(_diagrams[i].bgColor, -0.2);
           arrow.beginPath();
           arrow.moveTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height);
           arrow.lineTo((tmpObj.left + (_config.width /2)) - (_config.arrowWidth/2) + (difference * -1), tmpObj.top + _config.height + _config.arrowWidth);
@@ -578,17 +613,17 @@ AntuaneChart.prototype.draw = function(){
           _context.setLineDash([0]);
 
           line.beginPath();
-          line.strokeStyle = _diagrams[i].bgColor;
+          line.strokeStyle = _config.lineColor || _diagrams[i].bgColor;
           line.moveTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top);
           line.lineTo((_diagrams[i].left + (_config.width /2)) + (difference * -1), _diagrams[i].top - _config.margin + difference);
           line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height + _config.margin + difference);
-          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height);
+          line.lineTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height + (_config.arrowWidth/2));
           line.lineWidth = _config.lineWidth;
           line.stroke();
 
 
           var arrow = _context;
-          arrow.fillStyle= _diagrams[i].bgColor;
+          arrow.fillStyle= _config.lineColor || _diagrams[i].bgColor;
           arrow.beginPath();
           arrow.moveTo((tmpObj.left + (_config.width /2)) + (difference * -1), tmpObj.top + _config.height);
           arrow.lineTo((tmpObj.left + (_config.width /2)) - (_config.arrowWidth/2) + (difference * -1), tmpObj.top + _config.height + _config.arrowWidth);

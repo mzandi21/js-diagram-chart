@@ -29,26 +29,30 @@
       {id: 3, text: "Text Example", color: "#ffffff", bgColor: "#000033"},
       {id: 4, text: "Text Example", color: "#ffffff", bgColor: "#333300"},
       {id: 5, text: "Text Example", color: "#ffffff", bgColor: "#003333"},
-      {id: 6, text: "Text Example", color: "#ffffff", bgColor: "#330033"}
+      {id: 6, text: "Text Example", color: "#ffffff", bgColor: "#330033"},
+      {id: 7, text: "Text Example", color: "#ffffff", bgColor: "#000000"},
+      {id: 8, text: "Text Example", color: "#ffffff", bgColor: "#000000"},
+      {id: 9, text: "Text Example", color: "#ffffff", bgColor: "#000000"}
     ],
     links: [
       { source: 2, parent:1  },
       { source: 3, parent:1  },
       { source: 4, parent:3  },
       { source: 5, parent:3  },
-      { source: 6, parent:2  }
+      { source: 6, parent:2  },
+      { source: 9, parent:9  },
+      { source: 9, parent:6  },
     ],
     config:{
       element: "mycanvas",
-      margin: 49,
+      margin: 30,
       padding: 10,
-      width: 250,
-      height: 170,
-      arrowWidth: 10,
+      width: 100,
+      height: 50,
+      arrowWidth: 8,
       lineWidth: 2,
       fontFamily: "Arial",
-      fontSize: 12,
-      linkColor: "#ff0000",
+      fontSize: 10,
       autoSize : true,
     }
   };
