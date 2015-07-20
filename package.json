@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/antuane/antuane-chart/issues"
   },
-  "homepage": "https://github.com/antuane/antuane-chart#readme"
+  "homepage": "https://github.com/antuane/antuane-chart#readme",
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-uglify": "~1.2.0"
+  }
 }
