@@ -2,8 +2,6 @@
 
   It is a simple prototype diagram chart based on hierarchy , made in javascript using CANVAS / HTML5
 
-  https://antuane.herokuapp.com/
-
 ## How to use
 
   1. Import antuane-chart.js in your html page.
@@ -19,7 +17,7 @@
 
       Example:
 
-        ```bash
+        ```
             var dataExample = {
              diagrams: [
                {id: 1, text: "Text Example", color: "#ffffff", bgColor: "#330000"},
