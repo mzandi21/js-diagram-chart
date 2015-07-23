@@ -64,6 +64,7 @@
 
     var chart = new AntuaneChart(dataExample);
 
+    //Zoom example
 
     chart.addZoom(10)
     chart.addZoom(-5);
@@ -72,16 +73,18 @@
     </script>
     ```
 
-### Live Example JSFiddle
+### Live Example
 
-[Click here](http://jsfiddle.net/antuane/7qp15m3v).
+[Click here](http://jsfiddle.net/antuane/7qp15m3v) to live example by JSFiddle.
 
 
 ### Problems & Bugs?
+
  Make sure that you have a *functional* [jsfiddle](http://jsfiddle.net/) exemplifying your problem and open an [issue](https://github.com/antuane/antuane-chart/issues) for us. Don't know how to do it? Use this [fiddle example](http://jsfiddle.net/antuane/7qp15m3v).
 
 
 ### Help us!
+
 [![Click here to lend your support to: Antuane Chart and make a donation at pagseguro.com.br !](https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif)](https://pagseguro.uol.com.br/checkout/v2/donation.html?currency=BRL&receiverEmail=contato@antuane.com.br)
 
 ## Donators (Thanks!)
