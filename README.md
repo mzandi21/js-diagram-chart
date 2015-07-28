@@ -14,7 +14,7 @@
     <canvas id="mycanvas" width="640" height="480"></canvas>
     ```
 
-  3. Call AntuaneChart function after canvas element
+  3. Call AntuaneChart function after canvas element and use JSON to data
 
   Example:
 
