@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/antuane/antuane-chart#readme",
   "devDependencies": {
-    "gulp": "~3.9.0",
-    "gulp-uglify": "~1.2.0"
+    "gulp": "~3.9.0"
   }
 }
