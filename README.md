@@ -1,7 +1,8 @@
 # AntuaneChart
 
-  It is a simple diagram chart based on hierarchy.
-  Javascript / Html5 / Canvas
+  **RESULT**
+
+  ![Example](https://github.com/antuane/chart/raw/master/example.png)
 
 ## How to use
 
@@ -22,7 +23,6 @@
 
     ```bash
     <script type="text/javascript">
-
       var dataExample = {
         diagrams: [
         {id: 1, text: "DIAGRAM 01", color: "#999999", bgColor: "#330000"},
@@ -67,11 +67,10 @@
 
       var chart = new AntuaneChart(dataExample);
 
-      //Methods example
+      //OTHERS METHODS 
 
       //chart.addZoom(-5);
       //chart.resetZoom();
-
       //chart.update(dataExample);
 
     </script>
