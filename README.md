@@ -1,7 +1,8 @@
 # AntuaneChart
 
-  It is a simple diagram chart based on hierarchy.
-  Javascript / Html5 / Canvas
+  **RESULT**
+  
+  ![Example](https://github.com/antuane/chart/raw/master/example.png)
 
 ## How to use
 
