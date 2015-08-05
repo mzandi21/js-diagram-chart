@@ -1,6 +1,6 @@
 # AntuaneChart
 
-  **RESULT**
+  It is a simple diagram chart based on hierarchy, developed in Javascript!
 
   ![Example](https://github.com/antuane/chart/raw/master/example.png)
 
