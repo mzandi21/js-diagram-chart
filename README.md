@@ -85,12 +85,7 @@
 
  Make sure that you have a *functional* [jsfiddle](http://jsfiddle.net/) exemplifying your problem and open an [issue](https://github.com/antuane/antuane-chart/issues) for us. Don't know how to do it? Use this [fiddle example](http://jsfiddle.net/antuane/7qp15m3v).
 
-
-### Help us!
-
-[![Click here to lend your support to: Antuane Chart and make a donation at pagseguro.com.br !](https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif)](https://pagseguro.uol.com.br/checkout/v2/donation.html?currency=BRL&receiverEmail=contato@antuane.com.br)
-
-## Donators (Thanks!)
+## Thanks!
 * Randolfo Vasconcelos
 
 
