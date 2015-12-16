@@ -86,7 +86,7 @@
  Make sure that you have a *functional* [jsfiddle](http://jsfiddle.net/) exemplifying your problem and open an [issue](https://github.com/antuane/antuane-chart/issues) for us. Don't know how to do it? Use this [fiddle example](http://jsfiddle.net/antuane/7qp15m3v).
 
 ## Thanks!
-* Randolfo Vasconcelos
+* [S2IT Solutions]( http://www.s2it.com.br )
 
 
 
